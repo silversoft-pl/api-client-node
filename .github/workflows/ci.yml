@@ -29,5 +29,5 @@ jobs:
           node-version: ${{ matrix.node }}
       - run: npm install --no-save ../api-signer-node
         working-directory: api-client-node
-      - run: node --test test/
+      - run: npm test
         working-directory: api-client-node
