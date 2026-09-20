@@ -20,6 +20,9 @@
   "dependencies": {
     "@silversoft/api-signer": "^1.0.0"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "node --test test/*.test.js"
   }
