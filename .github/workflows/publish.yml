@@ -27,6 +27,7 @@ jobs:
             echo "tag $tag does not match package.json $pkg" >&2
             exit 1
           fi
+      - run: npm install --no-audit --no-fund
       - run: node --test test/*.test.js
       # A tag can be pushed after a manual publish, so do not fail on a re-run.
       - name: Skip a version that is already on the registry

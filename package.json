@@ -1,7 +1,7 @@
 {
   "name": "@silversoft/api-client",
   "version": "1.0.0",
-  "description": "Klient wewnętrznego API: JSON po HTTP z podpisem RFC 9421, bez zależności zewnętrznych.",
+  "description": "Klient wewnętrznego API: JSON po HTTP z podpisem RFC 9421, transport na node:http/node:https, jedyna zależność to @silversoft/api-signer.",
   "license": "MIT",
   "homepage": "https://github.com/silversoft-pl/api-client-node",
   "repository": { "type": "git", "url": "git+https://github.com/silversoft-pl/api-client-node.git" },
