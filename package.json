@@ -1,0 +1,26 @@
+{
+  "name": "@silversoft/api-client",
+  "version": "1.0.0",
+  "description": "Klient wewnętrznego API: JSON po HTTP z podpisem RFC 9421, bez zależności zewnętrznych.",
+  "license": "MIT",
+  "homepage": "https://github.com/silversoft-pl/api-client-node",
+  "repository": { "type": "git", "url": "git+https://github.com/silversoft-pl/api-client-node.git" },
+  "bugs": { "url": "https://github.com/silversoft-pl/api-client-node/issues" },
+  "keywords": ["api", "http", "client", "rfc9421", "http-signatures"],
+  "engines": { "node": ">=18" },
+  "main": "lib/index.js",
+  "module": "index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./lib/index.js"
+    }
+  },
+  "files": ["lib/", "index.mjs", "README.md", "LICENSE"],
+  "dependencies": {
+    "@silversoft/api-signer": "^1.0.0"
+  },
+  "scripts": {
+    "test": "node --test test/"
+  }
+}

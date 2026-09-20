@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    # api-signer jest osobnym repozytorium, więc jego zmiany są tu niewidoczne.
+    - cron: '0 7 * * 1'
+
+jobs:
+  test:
+    name: Node ${{ matrix.node }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: ['18', '20', '22', '24']
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          path: api-client-node
+      - uses: actions/checkout@v4
+        with:
+          repository: silversoft-pl/api-signer-node
+          path: api-signer-node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm install --no-save ../api-signer-node
+        working-directory: api-client-node
+      - run: node --test test/
+        working-directory: api-client-node
